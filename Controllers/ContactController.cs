@@ -10,6 +10,7 @@ namespace Lab_5_2.Controllers
     public class ContactController : Controller
     {
         private ICRUDContactRepository repository;
+        private IContactRepository contactRepository;
 
         public ContactController(ICRUDContactRepository repository)
         {
@@ -59,6 +60,19 @@ namespace Lab_5_2.Controllers
         public IActionResult Edit(Contact contact)
         {
             repository.Update(contact);
+            return View("List", repository.FindAll());
+        }
+
+
+
+        public IActionResult Issue()
+        {
+            Issue issue = new Issue()
+            {
+                Title ="test",
+                Date = new DateTime()
+        };
+        contactRepository.addIssue(4,issue);
             return View("List", repository.FindAll());
         }
     }

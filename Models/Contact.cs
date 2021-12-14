@@ -9,6 +9,15 @@ namespace Lab_5_2.Models
 {
     public class Contact
     {
+
+        public Contact()
+        {
+            Issues = new HashSet<Issue>();
+        }
+
+
+
+
         [HiddenInput]
         public int Id { get; set; }
 
@@ -26,5 +35,7 @@ namespace Lab_5_2.Models
 
         [DisplayFormat(DataFormatString ="{0:F2}")]
         public int Rating { get; set; }
+
+        public ICollection<Issue> Issues { get; set; }
     }
 }

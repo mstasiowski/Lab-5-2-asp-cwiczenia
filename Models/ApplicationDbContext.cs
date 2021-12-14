@@ -7,5 +7,7 @@ namespace Lab_5_2.Models
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : 
             base(options) { }
         public DbSet<Contact> Contacts { get; set; }
+
+        public DbSet<Issue> Issues { get; set; }
     }
 }
